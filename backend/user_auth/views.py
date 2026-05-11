@@ -6,10 +6,10 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import generics, permissions, status
 from .serializers import UserSerializer
 
-User = get_user_model
+User = get_user_model()
 
 class user_register(generics.CreateAPIView):
-    queryset= User.objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
 
