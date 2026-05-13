@@ -13,3 +13,13 @@ class MachineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Machine
         fields = ['id', 'model', 'serial_number']
+
+class MachineBrandSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MachineBrand
+        fields = ['id', 'brand']
+
+class MachineCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MachineCategory
+        fields = ['id', 'category']
