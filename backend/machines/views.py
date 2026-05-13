@@ -1,6 +1,5 @@
 from rest_framework import viewsets
-from rest_framework import serializers
-from .serializers import MachineSerializer, MachineModelSerializer
+from .serializers import MachineSerializer, MachineModelSerializer, MachineCategorySerializer, MachineBrandSerializer
 from .models import Machine, MachineBrand, MachineCategory, MachineModel
 
 class MachineViewSet(viewsets.ModelViewSet):
@@ -11,11 +10,11 @@ class MachineModelViewSet(viewsets.ModelViewSet):
     queryset = MachineModel.objects.all()
     serializer_class = MachineModelSerializer
 
-class BrandViewSet(viewsets.ReadOnlyModelViewSet):
+class MachineBrandViewSet(viewsets.ModelViewSet):
     queryset = MachineBrand.objects.all()
-    serializer_class = serializers.ModelSerializer
+    serializer_class = MachineBrandSerializer
 
-class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
+class MachineCategoryViewSet(viewsets.ModelViewSet):
     queryset = MachineCategory.objects.all()
-    serializer_class = serializers.ModelSerializer
+    serializer_class = MachineCategorySerializer
     
