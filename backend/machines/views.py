@@ -11,8 +11,12 @@ class MachineModelViewSet(viewsets.ModelViewSet):
     serializer_class = MachineModelSerializer
 
 class MachineBrandViewSet(viewsets.ModelViewSet):
-    queryset = MachineBrand.objects.all()
     serializer_class = MachineBrandSerializer
+
+    def get_queryset(self):
+        if self.request.user.is_anonymous:
+            return MachineBrand.objects.none()
+        return MachineBrand.objects.all()
 
 class MachineCategoryViewSet(viewsets.ModelViewSet):
     queryset = MachineCategory.objects.all()
