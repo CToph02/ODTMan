@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator
 from rest_framework import serializers
 from .models import Machine, MachineBrand, MachineCategory, MachineModel
 
@@ -15,6 +16,15 @@ class MachineSerializer(serializers.ModelSerializer):
         fields = ['id', 'model', 'serial_number']
 
 class MachineBrandSerializer(serializers.ModelSerializer):
+    brand = serializers.CharField(
+        validators=[
+            RegexValidator(
+                regex = '^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\s]+$',
+                message="La marca solo puede contener letras, números y espacios."
+            )
+        ]
+    )
+
     class Meta:
         model = MachineBrand
         fields = ['id', 'brand']
