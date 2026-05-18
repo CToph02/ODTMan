@@ -1,13 +1,13 @@
 from django.db import models
 
 class MachineBrand(models.Model):
-    brand = models.CharField(max_length=100)
+    brand = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return f'{self.brand}'
 
 class MachineCategory(models.Model):
-    category = models.CharField(max_length=100)
+    category = models.CharField(max_length=100, unique=True)
     
     def __str__(self):
         return f'{self.category}'
