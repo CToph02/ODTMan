@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.response import Response
 
-class MachineMessageResponseMixin:
+class MessageResponseMixin:
     verbose_name = None
 
     def get_verbose_name(self):
