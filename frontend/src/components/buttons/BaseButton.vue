@@ -7,6 +7,10 @@ defineProps({
   color: {
     type: String,
     default: 'white'
+  },
+  type: {
+    type: String,
+    default: 'button'
   }
 })
 
