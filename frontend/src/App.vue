@@ -1,11 +1,9 @@
 <script setup>
-import Header from '@/components/Header.vue'
-import Login from '@/components/Login.vue';
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <Login />
-  <Header />
+  <RouterView />
 </template>
 
 <style scoped>
