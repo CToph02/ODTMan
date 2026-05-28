@@ -19,7 +19,7 @@ class MachineBrandSerializer(serializers.ModelSerializer):
     brand = serializers.CharField(
         validators=[
             RegexValidator(
-                regex = '^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\s-]+$',
+                regex = '^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\\s-]+$',
                 message="La marca solo puede contener letras, números y espacios."
             )
         ]
@@ -37,7 +37,7 @@ class MachineCategorySerializer(serializers.ModelSerializer):
             'category':{
                 'validators': [
                     RegexValidator(
-                        regex = '^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\s]+$',
+                        regex = '^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\\s]+$',
                         message="La categoría solo puede contener letras, números y espacios."
                     )
                 ],
