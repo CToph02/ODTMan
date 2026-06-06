@@ -57,3 +57,9 @@ def user_pwd_change(request):
     user.set_password(new_pwd_confirm)
     user.save()
     return Response({'Message': 'Updated password'})
+
+@api_view(['GET'])
+@permission_classes([permissions.IsAuthenticated])
+def get_user(request):
+    serializer = UserSerializer(request.user)
+    return Response(serializer.data, status=status.HTTP_200_OK)

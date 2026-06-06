@@ -1,6 +1,6 @@
 #rutas
-RUTA_BACKEND="/home/cthop/ODTMan/backend"
-RUTA_FRONTEND="/home/cthop/ODTMan/frontend"
+RUTA_BACKEND="/mnt/1TB/Proyectos/ODTMan/backend"
+RUTA_FRONTEND="/mnt/1TB/Proyectos/ODTMan/frontend"
 
 
 #funcion para detener ambos servidores con control + c
