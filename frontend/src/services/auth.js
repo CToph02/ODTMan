@@ -8,4 +8,11 @@ export const authService = {
     login(data){
         return api.post('auth/login/', data)
     },
+
+    logout(data){
+        return api.post('auth/logout/', data)
+    },
+    getUser(){
+        return api.get('auth/user/')
+    }
 }
