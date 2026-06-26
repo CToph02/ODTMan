@@ -14,7 +14,7 @@ import { RouterView } from 'vue-router';
 }
 body {
   font-family: sans-serif; /* Opcional: Un tipo de letra limpio para empezar */
-  background-color: #f4f6f9; /* Opcional: Un fondo gris claro común en paneles */
+  background-color: #e8e8e9; /* Opcional: Un fondo gris claro común en paneles */
   min-height: 100vh;
   width: 100%;
 }

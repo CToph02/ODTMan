@@ -47,8 +47,8 @@ onMounted(async () => {
 
 <style scoped>
 header{
-    padding: 8px;
-    height: 2rem;
+    padding: 1rem;
+    height: 3rem;
     background-color: gray;
     display: flex;
     flex-direction: row;

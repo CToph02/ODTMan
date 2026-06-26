@@ -30,7 +30,7 @@ defineEmits(['click'])
 .btn-generico {
   padding: 8px 16px;
   border: none;
-  border-radius: 4px;
+  border-radius: .5rem;
   cursor: pointer;
   font-weight: bold;
 }

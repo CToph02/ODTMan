@@ -41,9 +41,21 @@ defineProps({
     display: flex;
     flex-direction: column;
 }
+
 input{
-    padding: 4px;
-    border: 1px solid black;
-    border-radius: 4px;
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: .5rem;
+    width: 10rem;
+    transition: .25s ease-in-out;
 }
+
+input:hover{
+    border: 1px solid black;
+}
+
+/* input:focus{
+    width: 25rem;
+} */
+
 </style>
