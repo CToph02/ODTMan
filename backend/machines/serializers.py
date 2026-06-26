@@ -2,19 +2,6 @@ from django.core.validators import RegexValidator
 from rest_framework import serializers
 from .models import Machine, MachineBrand, MachineCategory, MachineModel
 
-class MachineSerializer(serializers.ModelSerializer):
-    serial_number = serializers.CharField(
-        validators=[
-            RegexValidator(
-                regex = r"""^[^@'$"´`]+$""",
-                message="El número serial no puede contener catacteres especiales."
-            )
-        ]
-    )
-    class Meta:
-        model = Machine
-        fields = ['id', 'model', 'serial_number']
-
 class MachineBrandSerializer(serializers.ModelSerializer):
     brand = serializers.CharField(
         validators=[
@@ -60,3 +47,17 @@ class MachineModelSerializer(serializers.ModelSerializer):
         if instance.category:
             representation['category'] = MachineCategorySerializer(instance.category).data
         return representation
+
+class MachineSerializer(serializers.ModelSerializer):
+    model = MachineModelSerializer(read_only=True)
+    serial_number = serializers.CharField(
+        validators=[
+            RegexValidator(
+                regex = r"""^[^@'$"´`]+$""",
+                message="El número serial no puede contener catacteres especiales."
+            )
+        ]
+    )
+    class Meta:
+        model = Machine
+        fields = ['id', 'model', 'serial_number']
